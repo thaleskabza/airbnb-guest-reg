@@ -1,0 +1,312 @@
+/* app/globals.css - Aggressive light theme fix */
+
+/* Force light theme on everything */
+*,
+*::before,
+*::after,
+html,
+body,
+main,
+div,
+section,
+header,
+footer {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  box-sizing: border-box;
+}
+
+/* Remove any gradients or background images */
+* {
+  background-image: none !important;
+}
+
+/* Reset everything */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Main container */
+main {
+  min-height: 100vh !important;
+  padding: 2rem 1rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  color: #1f2937 !important;
+}
+
+h2 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  color: #374151 !important;
+}
+
+h3 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+  color: #374151 !important;
+}
+
+p {
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 1.5rem !important;
+  color: #4b5563 !important;
+  text-align: center !important;
+}
+
+/* Fix icon sizing */
+svg {
+  max-width: 3rem !important;
+  max-height: 3rem !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  display: block !important;
+  margin: 0 auto 1rem auto !important;
+}
+
+/* Icon containers */
+.inline-flex {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 4rem !important;
+  height: 4rem !important;
+  background: #dbeafe !important;
+  border-radius: 50% !important;
+  margin: 0 auto 1rem auto !important;
+}
+/* Quick button visibility test */
+button {
+  background: #2563eb !important;
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-flex !important;
+  padding: 12px 24px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+}
+/* Button styling */
+button,
+a[class*="button"],
+a[href="/register"] {
+  display: inline-block !important;
+  background: #2563eb !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  padding: 1rem 2rem !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-align: center !important;
+  margin: 1rem auto !important;
+  display: block !important;
+  max-width: 300px !important;
+}
+
+button:hover,
+a[href="/register"]:hover {
+  background: #1d4ed8 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Secondary buttons */
+button.secondary,
+a[class*="secondary"] {
+  background: #ffffff !important;
+  color: #374151 !important;
+  border: 2px solid #d1d5db !important;
+}
+
+/* Card styling */
+.card,
+div[class*="card"],
+div[class*="bg-white"],
+section {
+  background: #ffffff !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 1rem !important;
+  padding: 2rem !important;
+  margin: 1rem auto !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  max-width: 800px !important;
+}
+
+/* Grid and flex layouts */
+.grid,
+div[class*="grid"] {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2rem !important;
+  margin: 2rem 0 !important;
+}
+
+.flex,
+div[class*="flex"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+/* Responsive grid */
+@media (min-width: 768px) {
+  .grid,
+  div[class*="grid-cols-2"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  div[class*="grid-cols-3"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  div[class*="grid-cols-4"] {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Text utilities */
+.text-center,
+div[class*="text-center"] {
+  text-align: center !important;
+}
+
+.text-muted,
+small,
+div[class*="text-gray"] {
+  color: #6b7280 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Link styling */
+a {
+  color: #2563eb !important;
+  text-decoration: underline !important;
+}
+
+a:hover {
+  color: #1d4ed8 !important;
+}
+
+/* Form elements */
+label {
+  display: block !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.5rem !important;
+  color: #374151 !important;
+}
+
+input,
+textarea,
+select {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  border: 2px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  font-size: 1rem !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  main {
+    padding: 1rem !important;
+  }
+  
+  h1 {
+    font-size: 1.875rem !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+  }
+  
+  svg {
+    max-width: 2rem !important;
+    max-height: 2rem !important;
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  
+  .inline-flex {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+}
+
+/* Override any Tailwind classes */
+[class*="bg-gradient"] {
+  background: #ffffff !important;
+  background-image: none !important;
+}
+
+[class*="bg-blue"] {
+  background: #dbeafe !important;
+}
+
+[class*="bg-green"] {
+  background: #dcfce7 !important;
+}
+
+[class*="bg-gray"] {
+  background: #f9fafb !important;
+}
+
+/* Ensure header section is visible */
+header {
+  background: #ffffff !important;
+  padding: 3rem 1rem !important;
+  border-bottom: 2px solid #e5e7eb !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Section spacing */
+section {
+  margin: 3rem auto !important;
+  padding: 3rem 2rem !important;
+}
+
+/* Footer */
+footer {
+  background: #f9fafb !important;
+  padding: 2rem !important;
+  margin-top: 3rem !important;
+  border-top: 2px solid #e5e7eb !important;
+}

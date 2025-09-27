@@ -1,0 +1,68 @@
+{
+    "name": "Guest Registration System",
+    "short_name": "GuestReg",
+    "description": "Complete your accommodation check-in online. Upload documents, e-sign, and comply with South African Immigration Act requirements.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "orientation": "portrait-primary",
+    "categories": ["travel", "business", "productivity"],
+    "lang": "en",
+    "scope": "/",
+    "icons": [
+      {
+        "src": "/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/icon-apple-touch.png",
+        "sizes": "180x180",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "/screenshot-mobile.png",
+        "sizes": "390x844",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Mobile registration form"
+      },
+      {
+        "src": "/screenshot-desktop.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Desktop registration interface"
+      }
+    ],
+    "shortcuts": [
+      {
+        "name": "New Registration",
+        "short_name": "Register",
+        "description": "Start a new guest registration",
+        "url": "/register",
+        "icons": [
+          {
+            "src": "/icon-shortcut-register.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          }
+        ]
+      }
+    ],
+    "prefer_related_applications": false,
+    "edge_side_panel": {
+      "preferred_width": 400
+    }
+  }

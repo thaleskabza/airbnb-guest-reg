@@ -1,34 +1,75 @@
-# airbnb-guest-reg
-Awesome — I spun up a complete, Vercel-ready Next.js app for your **online guest registration + selfie/ID upload + e-signature + PDF** flow. It uses **Vercel KV (Redis)** by default, with a simple in-memory fallback for local dev. It generates an A4 PDF that includes all fields + embedded selfie, ID/Passport image, and signature, with POPIA consent and Immigration Act register language.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-I put everything (requirements, project tree, and full code) in the canvas to the right so you can copy/paste straight into a repo.
+## Getting Started
 
-### What you’ll do next
+First, run the development server:
 
-1. Create a new repo and paste the files from the canvas.
-2. In Vercel → Integrations, add **Vercel KV** and copy the env vars.
-3. Add env vars in Vercel (and `.env.local` for local dev):
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-   * `KV_REST_API_URL`
-   * `KV_REST_API_TOKEN`
-   * (optional) `KV_URL`, `KV_REST_API_READ_ONLY_TOKEN`
-4. `npm i && npm run dev` locally — then deploy to Vercel.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Highlights
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-* **Register page** collects: full name, ID/passport, nationality, residence status, address, phone, email, check-in/out, guest count.
-* **Uploads**: camera capture for selfie + ID/Passport (mobile friendly).
-* **Signature**: smooth canvas signature (SignaturePad).
-* **POPIA consent** + **Non-Refund acknowledgement** checkboxes (required).
-* **Serverless**: `/api/submit` stores the record in KV; `/api/pdf/[id]` returns the generated PDF on demand.
-* **Success page** gives the guest a download link to the PDF (printable “register” entry).
-* **SA-compliant** wording: Immigration Act register + POPIA usage/retention language included.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Want me to add:
+## Learn More
 
-* an **Admin list/delete** screen with basic auth,
-* **Vercel Blob** storage (so images aren’t base64 in KV),
-* or a **cron job** to auto-purge records after the statutory retention period?
+To learn more about Next.js, take a look at the following resources:
 
-Say the word and I’ll extend the project.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+# Guest Registration (SA-Compliant)
+
+
+This app collects guest details, selfie, ID/Passport image, and a signature, stores them in Vercel KV (Redis), and generates a PDF that forms your lodger register entry under the Immigration Act. It includes explicit POPIA consent and non-refund acknowledgement.
+
+
+## Requirements
+- Node 18+
+- Vercel account
+- Vercel KV (Redis) enabled on the project (or use dev fallback in-memory)
+
+
+## Quick Start
+```bash
+pnpm i # or npm i / yarn
+cp .env.local.example .env.local
+# Fill KV_REST_API_URL and KV_REST_API_TOKEN (from Vercel KV dashboard)
+pnpm dev
+```
+
+
+## Deploy
+- Push to GitHub and import into Vercel.
+- Add environment variables in Vercel: `KV_REST_API_URL`, `KV_REST_API_TOKEN` (and optionally `KV_URL`).
+
+
+## Legal/POPIA Considerations (Non-legal advice)
+- Keep access limited; use Vercel Project members only.
+- Set data retention (e.g., cron job to purge entries older than statutory period).
+- Provide a privacy notice and purpose (Immigration Act compliance + guest management).
+- Offer a data access request channel for guests.
+
+
+## Notes
+- Images are stored base64 inside the KV item for simplicity. For scale, consider Vercel Blob storage and only store URLs in KV.
+- The PDF is generated on-demand from KV to avoid duplicating storage.
+- If you need admin listing or deletion, add routes protected by Basic Auth / Vercel Access Controls.
